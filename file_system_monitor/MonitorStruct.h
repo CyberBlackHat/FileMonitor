@@ -1,6 +1,7 @@
 #ifndef __MONITOR_STRUCT_H_
 #define __MONITOR_STRUCT_H_
 #pragma once
+#if defined(_WIN32) 
 #include <Windows.h> 
 #include <tchar.h>
 #include "CommonDefs.h"
@@ -15,4 +16,5 @@ struct MonitorStruct {
 	TCHAR* m_dirName;
 	FileMonitorListener* m_FileMonitorListener;
 };
+#endif //_WIN32  
 #endif //__MONITOR_STRUCT_H_
