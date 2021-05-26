@@ -40,7 +40,9 @@ void FileMonitorImpWin::removeListener(ListenerID listenerId) {
 	if (m_ThreadMonitors.end() == listenerThreadItem) {
 		throw new Exception("thread record does not exists for listenerId");
 	}
-	listenerThreadItem->second->join();
+	if (listenerThreadItem->second->joinable()) {
+		listenerThreadItem->second->join();
+	}
 	m_monitors.erase(listenerItem);
 	m_ThreadMonitors.erase(listenerThreadItem);
 }

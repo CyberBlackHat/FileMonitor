@@ -26,7 +26,7 @@ void FileMonitorListener::handleFileLogging(const String& filename, FILE_EVENTS 
 			strstream << " new file MD5 hash " << md5String.c_str(); 
 		}
 		else {
-			strstream << "Could't calculate md5 hash: error " << status; 
+			strstream << " Could't calculate md5 hash: error " << status; 
 		}
 		//Checking if file is encrypted:  //Consider doing it async 
 		std::cout << "Please patience, entropy calculation on big files takes a while...\n";

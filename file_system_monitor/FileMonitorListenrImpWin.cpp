@@ -164,7 +164,7 @@ void FileMonitorListenerImpWin::handleFileAction(const String& dir, const String
 	static TCHAR szFile[MAX_PATH] = { 0 };
 	::ZeroMemory(szFile, sizeof(szFile));
 	::PathCombine(szFile, dir.c_str(), filename.c_str());
-	if (FILE_EVENTS::RENAMED_OLD_NAME == action || FILE_EVENTS::DELETED) {
+	if (FILE_EVENTS::RENAMED_OLD_NAME == action || FILE_EVENTS::DELETED == action) {
 		handleDeletedOrRenamed(String(szFile), action); 
 	} 
 	else {
