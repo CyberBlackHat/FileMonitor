@@ -1,7 +1,7 @@
 #ifndef __MONITOR_STRUCT_H_
 #define __MONITOR_STRUCT_H_
 #pragma once
-#if defined(_WIN32) 
+#if defined(_WIN32)
 #include <Windows.h> 
 #include <tchar.h>
 #include "CommonDefs.h"
