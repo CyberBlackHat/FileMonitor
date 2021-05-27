@@ -27,7 +27,9 @@ MonitorStruct* CreateMonitor(LPCTSTR szDirectory, DWORD dwNotifyFilter)
 	MonitorStruct* pMonitor;
 	size_t ptrsize = sizeof(*pMonitor);
 	pMonitor = static_cast<MonitorStruct*>(::HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, ptrsize));
-
+	if (!pMonitor) {
+		return pMonitor; 
+	}
 	pMonitor->m_dirHandle = CreateFile(szDirectory, FILE_LIST_DIRECTORY,
 		FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, NULL,
 		OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS | FILE_FLAG_OVERLAPPED |

@@ -9,7 +9,6 @@ public:
 	FileMonitorImpWin();
 	virtual ~FileMonitorImpWin();
 	//Add Monitor Listener 
-	//throws FileNotFound Exception is the file doesn't exists 
 	virtual ListenerID addFileMonitorListener(String& directory);
 	//Remove Listner according to ListenerID
 	virtual void removeListener(ListenerID listenerId);

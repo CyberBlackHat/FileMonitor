@@ -1,5 +1,6 @@
 #ifndef __FILE_MONITOR_IMPL_H_
 #define __FILE_MONITOR_IMPL_H_
+#pragma once
 #include "FileMonitor.h"
 #include "EventsEnum.h"
 
@@ -24,7 +25,6 @@ public:
 	FileMonitorImpl();
 	virtual ~FileMonitorImpl();
 	//Add Monitor Listener 
-	//throws FileNotFound Exception is the file doesn't exists 
 	virtual ListenerID addFileMonitorListener(String& directory) = 0;
 	//Remove Listner according to ListenerID
 	virtual void removeListener(ListenerID listenerId) = 0;
@@ -35,8 +35,5 @@ protected:
 };
 
 
-/*struct 
-class */
 
-#pragma once
 #endif //__FILE_MONITOR_IMPL_H_
